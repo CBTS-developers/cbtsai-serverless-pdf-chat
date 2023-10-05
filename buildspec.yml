@@ -3,13 +3,18 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      # nodejs: 18
+      nodejs: 18
       python: 3.11
 
   build:
     commands:
       - cd backend
+      - sam package
       - sam deploy --stack-name serverless-pdf-chat --resolve-s3 --capabilities CAPABILITY_IAM --parameter-overrides 'ParameterKey=Repository,ParameterValue=CBTS-developers/cbtsai-serverless-pdf-chat'
+      - cd ..
+      - npm ci
+      - npm run dev
+
 
 artifacts:
   files:
