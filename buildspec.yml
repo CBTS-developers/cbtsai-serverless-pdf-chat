@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       - cd backend
-      - sam deploy --stack-name serverless-pdf-chat --resolve-s3 --parameter-overrides 'ParameterKey=Repository,ParameterValue=CBTS-developers/cbtsai-serverless-pdf-chat'
+      - sam deploy --stack-name serverless-pdf-chat --resolve-s3 --capabilities CAPABILITY_IAM --parameter-overrides 'ParameterKey=Repository,ParameterValue=CBTS-developers/cbtsai-serverless-pdf-chat'
 
 artifacts:
   files:
