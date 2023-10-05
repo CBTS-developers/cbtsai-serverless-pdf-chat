@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      # nodejs: 18
+      python: 3.11
+
+  build:
+    commands:
+      - sam deploy --stack-name serverless-pdf-chat --resolve-s3
+
+artifacts:
+  files:
+    - "**/*"
