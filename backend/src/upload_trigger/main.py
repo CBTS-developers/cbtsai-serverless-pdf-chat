@@ -27,7 +27,7 @@ def lambda_handler(event, context):
     file_name = split[1]
 
     document_id = shortuuid.uuid()
-
+    logger.info(f"downloading : {key} from bucket {BUCKET}" )
     s3.download_file(BUCKET, key, f"/tmp/{file_name}")
 
     with open(f"/tmp/{file_name}", "rb") as f:

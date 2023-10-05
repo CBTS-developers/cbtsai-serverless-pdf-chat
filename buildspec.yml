@@ -11,9 +11,9 @@ phases:
       - cd backend
       - sam build
       - sam deploy --stack-name serverless-pdf-chat --resolve-s3 --capabilities CAPABILITY_IAM --parameter-overrides 'ParameterKey=Repository,ParameterValue=CBTS-developers/cbtsai-serverless-pdf-chat'
-      - cd ..
-      - npm ci
-      - npm run dev
+      # - cd ..
+      # - npm ci
+      # - npm run dev
 
 
 artifacts:
