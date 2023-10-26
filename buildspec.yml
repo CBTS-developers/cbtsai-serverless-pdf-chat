@@ -10,7 +10,8 @@ phases:
     commands:
       - cd backend
       - sam build
-      - sam deploy --stack-name serverless-pdf-chat --resolve-s3 --capabilities CAPABILITY_IAM --parameter-overrides 'ParameterKey=Repository,ParameterValue=CBTS-developers/cbtsai-serverless-pdf-chat'
+      # - sam deploy --stack-name serverless-pdf-chat --resolve-s3 --capabilities CAPABILITY_IAM --parameter-overrides 'ParameterKey=Repository,ParameterValue=CBTS-developers/cbtsai-serverless-pdf-chat'
+      - sam delete --stack-name serverless-pdf-chat --no-prompts
       # - cd ..
       # - npm ci
       # - npm run dev
